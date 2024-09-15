@@ -1,0 +1,22 @@
+#ifndef USERMANGER_H
+#define USERMANGER_H
+#include <QString>
+#include <QSqlQuery>
+#include <QVariant>
+#include <memory>
+#include "databasemanager.h"
+#include "PasswordHash.h" // 引入假设的 PasswordHash 类
+
+class UserManger
+{
+public:
+    std::unique_ptr<DatabaseManager> dbManager;
+    UserManager(const QString &hostName, const QString &databaseName,  
+                   const QString &userName, const QString &password)  
+           : dbManager(std::unique_ptr<DatabaseManager>(new DatabaseManager(hostName, databaseName, userName, password))) {}  
+    bool authenticateUser(const QString &username, const QString &password);
+    bool registerUser(const QString &username, const QString &password);
+
+};
+
+#endif // USERMANGER_H

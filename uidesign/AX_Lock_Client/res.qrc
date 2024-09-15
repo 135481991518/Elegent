@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icon/Button1.png</file>
+        <file>icon/Button2.png</file>
+        <file>icon/pexels-photo-1939485.jpeg</file>
+        <file>icon/pexels-photo-3745234.png</file>
+        <file>icon/facerecognition.png</file>
+    </qresource>
+</RCC>
